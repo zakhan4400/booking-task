@@ -1,0 +1,45 @@
+import React from 'react'
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import { FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material';
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+  
+const MinimumStay = () => {
+  return (
+    <div>
+       <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Item sx={{textAlign:'start',padding:3}}>
+          <Typography  variant='h4' >Minimum Stay</Typography>
+        <Typography marginTop={1}>Do you require a minimum stay for<br/> your guests?</Typography>
+        
+        <FormControl sx={{width:{xs:'100%',sm:'25%',md:'25%',lg:'25%',xl:'25%'},marginTop:2}}>
+        <InputLabel id="demo-simple-select-label">No</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+        >
+          <MenuItem >1</MenuItem>
+          <MenuItem >2</MenuItem>
+          <MenuItem >3</MenuItem>
+        </Select>
+      </FormControl>
+          </Item>
+        </Grid>
+      </Grid>
+    </Box>
+    </div>
+  )
+}
+
+export default MinimumStay
